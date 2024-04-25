@@ -27,7 +27,7 @@ https://wiki.st.com/stm32mpu/wiki/STM32MP1_Distribution_Package
     repo init -u https://github.com/STMicroelectronics/oe-manifest.git -b refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v23.06.21
     repo init -u https://github.com/STMicroelectronics/oe-manifest.git -b refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v24.03.13
 
-    repo sync
+repo sync
 
   git clone -b mickledore https://github.com/zboszor/meta-python-ai meta-python-ai
 
@@ -35,14 +35,14 @@ https://wiki.st.com/stm32mpu/wiki/STM32MP1_Distribution_Package
   bitbake-layers show-layers
 
 
-  DISTRO=openstlinux-weston MACHINE=stm32mp15-disco source layers/meta-st/scripts/envsetup.sh
+DISTRO=openstlinux-weston MACHINE=stm32mp15-disco source layers/meta-st/scripts/envsetup.sh
 
-  /conf/local.conf
+/conf/local.conf
 
       BB_NUMBER_THREADS = "10"
       PARALLEL_MAKE = "-j 10"
 
-      bitbake st-image-weston
+bitbake st-image-weston
 
 
 cd tmp-glibc/deploy/images/stm32mp15-disco/scripts/
