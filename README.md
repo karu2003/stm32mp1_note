@@ -40,10 +40,11 @@ code openembedded-core/bitbake/lib/bb/utils.py
             """
             return
 
-  git clone -b mickledore https://github.com/zboszor/meta-python-ai meta-python-ai
+git clone -b mickledore https://github.com/zboszor/meta-python-ai meta-python-ai
 
-  bitbake-layers add-layer /work/layers/meta-python-ai
-  bitbake-layers show-layers
+bitbake-layers add-layer /work/layers/meta-python-ai
+  
+bitbake-layers show-layers
 
 
 DISTRO=openstlinux-weston MACHINE=stm32mp15-disco source layers/meta-st/scripts/envsetup.sh
