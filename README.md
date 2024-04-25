@@ -39,10 +39,10 @@ https://wiki.st.com/stm32mpu/wiki/STM32MP1_Distribution_Package
 
   /conf/local.conf
 
-  BB_NUMBER_THREADS = "10"
-  PARALLEL_MAKE = "-j 10"
+      BB_NUMBER_THREADS = "10"
+      PARALLEL_MAKE = "-j 10"
 
-  bitbake st-image-weston
+      bitbake st-image-weston
 
 
 cd tmp-glibc/deploy/images/stm32mp15-disco/scripts/
