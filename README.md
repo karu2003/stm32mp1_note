@@ -58,6 +58,7 @@ bitbake st-image-weston
 
 
 cd tmp-glibc/deploy/images/stm32mp15-disco/scripts/
+
 ./create_sdcard_from_flashlayout.sh ../flashlayout_st-image-weston/extensible/FlashLayout_sdcard_stm32mp157f-dk2-extensible.tsv 
 
 
@@ -73,3 +74,11 @@ https://wiki.st.com/stm32mpu/wiki/How_to_setup_a_WLAN_connection
 https://github.com/tuxable-ltd/meta-scipy
 
 https://layers.openembedded.org/layerindex/recipe/404069/
+
+apt-get install qtwayland python3-pyqt5
+
+QT_QPA_PLATFORM=wayland-egl python3 /home/weston/filename.py"
+
+QT_QPA_PLATFORM=eglfs
+
+
