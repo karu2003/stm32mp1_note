@@ -24,10 +24,10 @@ https://github.com/meta-qt5/meta-qt5
 https://wiki.st.com/stm32mpu/wiki/STM32MP1_Distribution_Package
 
 
-  repo init -u https://github.com/STMicroelectronics/oe-manifest.git -b refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v23.06.21
-  repo init -u https://github.com/STMicroelectronics/oe-manifest.git -b refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v24.03.13
+    repo init -u https://github.com/STMicroelectronics/oe-manifest.git -b refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v23.06.21
+    repo init -u https://github.com/STMicroelectronics/oe-manifest.git -b refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v24.03.13
 
-  repo sync
+    repo sync
 
   git clone -b mickledore https://github.com/zboszor/meta-python-ai meta-python-ai
 
