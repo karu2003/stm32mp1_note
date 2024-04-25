@@ -1,4 +1,4 @@
-# stm32mp1_note
+# stm32mp1 note
 how to build a image with scipy support
 
 https://www.cocoacrumbs.com/blog/2021-10-15-building-a-linux-distro-for-the-stm32mp157f-dk2/
