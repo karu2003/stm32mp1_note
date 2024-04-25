@@ -28,6 +28,15 @@ https://wiki.st.com/stm32mpu/wiki/STM32MP1_Distribution_Package
     repo init -u https://github.com/STMicroelectronics/oe-manifest.git -b refs/tags/openstlinux-6.1-yocto-mickledore-mp1-v24.03.13
 
 repo sync
+## edit
+code openembedded-core/bitbake/lib/bb/utils.py
+        def disable_network(uid=None, gid=None):
+            """
+            Disable networking in the current process if the kernel supports it, else
+            just return after logging to debug. To do this we need to create a new user
+            namespace, then map back to the original uid/gid.
+            """
+            return
 
   git clone -b mickledore https://github.com/zboszor/meta-python-ai meta-python-ai
 
