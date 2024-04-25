@@ -61,7 +61,7 @@ cd tmp-glibc/deploy/images/stm32mp15-disco/scripts/
 ./create_sdcard_from_flashlayout.sh ../flashlayout_st-image-weston/extensible/FlashLayout_sdcard_stm32mp157f-dk2-extensible.tsv 
 
 
-sudo umount `lsblk --list | grep sdb | grep part | gawk '{ print $7 }' | tr '\n' ' '`
+        sudo umount `lsblk --list | grep sdb | grep part | gawk '{ print $7 }' | tr '\n' ' '`
 
 sudo dd if=../flashlayout_st-image-weston/extensible/../../FlashLayout_sdcard_stm32mp157f-dk2-extensible.raw of=/dev/sdb bs=8M conv=fdatasync status=progress oflag=direct
 
