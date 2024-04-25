@@ -29,7 +29,9 @@ https://wiki.st.com/stm32mpu/wiki/STM32MP1_Distribution_Package
 
 repo sync
 ## edit
+
 code openembedded-core/bitbake/lib/bb/utils.py
+
         def disable_network(uid=None, gid=None):
             """
             Disable networking in the current process if the kernel supports it, else
