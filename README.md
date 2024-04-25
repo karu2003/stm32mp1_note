@@ -77,7 +77,7 @@ https://layers.openembedded.org/layerindex/recipe/404069/
 
 apt-get install qtwayland python3-pyqt5
 
-QT_QPA_PLATFORM=wayland-egl python3 /home/weston/filename.py"
+QT_QPA_PLATFORM=wayland-egl python3 /home/weston/filename.py
 
 QT_QPA_PLATFORM=eglfs
 
