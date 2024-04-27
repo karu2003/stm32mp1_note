@@ -49,10 +49,37 @@ bitbake-layers show-layers
 
 DISTRO=openstlinux-weston MACHINE=stm32mp15-disco source layers/meta-st/scripts/envsetup.sh
 
+https://www.wolfssl.com/docs/yocto-openembedded-recipe-guide/
+
+
 /conf/local.conf
 
-      BB_NUMBER_THREADS = "10"
-      PARALLEL_MAKE = "-j 10"
+      FORTRAN:forcevariable = ",fortran"
+      RUNTIMETARGET:append:pn-gcc-runtime = " libquadmath"
+
+      BB_NUMBER_THREADS = "20"
+      PARALLEL_MAKE = "-j 20"
+      IMAGE:INSTALL:append = " packagegroup-core-buildessential"
+      IMAGE:INSTALL:append = "python3-scipy"
+      IMAGE:INSTALL:append = "python3-pip"
+      IMAGE:INSTALL:append = "python3-matplotlib"
+      IMAGE:INSTALL:append = "python3-pandas"
+      IMAGE:INSTALL:append = "networkmanager"
+
+add in st-image-weston.bb
+
+# Define ROOTFS_MAXSIZE to 32GB
+IMAGE_ROOTFS_MAXSIZE = "33554432"
+
+CORE_IMAGE_EXTRA_INSTALL +=
+
+        packagegroup-core-buildessential \
+        packagegroup-framework-sample-qtwayland \
+        python3-scipy \
+        python3-pip \
+        python3-matplotlib \
+        python3-pandas \
+        networkmanager \
 
 bitbake st-image-weston
 
@@ -80,5 +107,7 @@ apt-get install qtwayland python3-pyqt5
 QT_QPA_PLATFORM=wayland-egl python3 /home/weston/filename.py
 
 apt install networkmanager-nmtui
+
+pip3 install pyqtgraph
 
 
