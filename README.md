@@ -110,4 +110,6 @@ apt install networkmanager-nmtui
 
 pip3 install pyqtgraph
 
+https://wiki.st.com/stm32mpu/wiki/Wayland_Weston_overview
+
 
