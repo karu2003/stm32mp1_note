@@ -66,7 +66,6 @@ https://www.wolfssl.com/docs/yocto-openembedded-recipe-guide/
                                 python3-matplotlib \
                                 python3-pandas \
                                 networkmanager \
-                                python3-pyqt5 \
                                 "
         hostname = "pretester"
 
