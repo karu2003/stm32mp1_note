@@ -59,12 +59,15 @@ https://www.wolfssl.com/docs/yocto-openembedded-recipe-guide/
 
       BB_NUMBER_THREADS = "20"
       PARALLEL_MAKE = "-j 20"
-      IMAGE:INSTALL:append = " packagegroup-core-buildessential"
-      IMAGE:INSTALL:append = "python3-scipy"
-      IMAGE:INSTALL:append = "python3-pip"
-      IMAGE:INSTALL:append = "python3-matplotlib"
-      IMAGE:INSTALL:append = "python3-pandas"
-      IMAGE:INSTALL:append = "networkmanager"
+      IMAGE_INSTALL:append = "\
+                              packagegroup-core-buildessential \
+                              python3-scipy \
+                              python3-pip \
+                              python3-matplotlib \
+                              python3-pandas \
+                              networkmanager \
+                              python3-pyqt5 \
+      "
 
 add in st-image-weston.bb
 
@@ -80,6 +83,9 @@ CORE_IMAGE_EXTRA_INSTALL +=
         python3-matplotlib \
         python3-pandas \
         networkmanager \
+        python3-pyqt5 \
+
+
 
 bitbake st-image-weston
 
@@ -104,7 +110,9 @@ https://layers.openembedded.org/layerindex/recipe/404069/
 
 apt-get install qtwayland python3-pyqt5
 
-QT_QPA_PLATFORM=wayland-egl python3 /home/weston/filename.py
+cp filename.py /home/weston/filename.py
+
+su -l weston -c "env QT_QPA_PLATFORM=wayland-egl python3 /home/weston/filename.py"
 
 apt install networkmanager-nmtui
 
