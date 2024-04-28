@@ -54,20 +54,21 @@ https://www.wolfssl.com/docs/yocto-openembedded-recipe-guide/
 
 /conf/local.conf
 
-      FORTRAN:forcevariable = ",fortran"
-      RUNTIMETARGET:append:pn-gcc-runtime = " libquadmath"
+        FORTRAN:forcevariable = ",fortran"
+        RUNTIMETARGET:append:pn-gcc-runtime = " libquadmath"
 
-      BB_NUMBER_THREADS = "20"
-      PARALLEL_MAKE = "-j 20"
-      IMAGE_INSTALL:append = "\
-                              packagegroup-core-buildessential \
-                              python3-scipy \
-                              python3-pip \
-                              python3-matplotlib \
-                              python3-pandas \
-                              networkmanager \
-                              python3-pyqt5 \
-      "
+        BB_NUMBER_THREADS = "20"
+        PARALLEL_MAKE = "-j 20"
+        IMAGE_INSTALL:append = "\ 
+                                packagegroup-core-buildessential \
+                                python3-scipy \
+                                python3-pip \
+                                python3-matplotlib \
+                                python3-pandas \
+                                networkmanager \
+                                python3-pyqt5 \
+                                "
+        hostname = "pretester"
 
 add in st-image-weston.bb
 
